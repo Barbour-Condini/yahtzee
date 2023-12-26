@@ -18,8 +18,6 @@ let diceObjs = [
 // this array tracks the number of dice that are of the same value
 let diceDuplicates = [0, 0, 0, 0, 0, 0]
 
-// tracks whether the game has started or not
-// let gameStart = false;
 
 // this array of objects tracks score selections
 let scoreObjs = [
@@ -61,7 +59,6 @@ const diceRoll = () => {
             diceObjs[i].value = result;
             document.getElementById(`${i+1}`).textContent = result;
         }
-        // console.log(diceObjs[i].value);
     }
 }
 
@@ -74,8 +71,6 @@ const rollRequest = () => {
 
 const rollTracker = () => {
         // rolls dice if player is still eligible to roll
-        // gameStart = true;
-        // console.log(gameStart);
         const rollCount = document.querySelector('#roll');
         if (rollCounter < 4 && rollCount.textContent !== 'Play Again') {
             if (rollCounter < 2) {
@@ -110,9 +105,7 @@ const holdRequest = () => {
             } else {
                 diceObjs[this.id - 1].hold  = true;
             }
-
             // change button colour to reflect hold status
-            // save a reference to all dice objects (to let you change their background color later)
             changeColor(diceButtons, this.id - 1)
         }
         });
@@ -135,7 +128,6 @@ const upperScores = () => {
         let score = 0;
         const scoreDisplay = document.querySelector(`#s${scoreButton}`);
         if (scoreObjs[scoreButton - 1].selected === false) {
-            // console.log(scoreDisplay.style.display); // atm this is nothing, null
             for (let diceButton = 0; diceButton<5; diceButton++) {
                 if (diceObjs[diceButton].value === scoreButton) {
                     score += diceObjs[diceButton].value;
@@ -227,7 +219,6 @@ const straights = () => {
         diceValues.push(diceObjs[i].value)
     }
     diceValues.sort();
-    // console.log(diceValues);
     let count = 0;
     for (let i=0; i<4; i++) {
         if (diceValues[i] === diceValues[i+1] - 1) {
@@ -237,7 +228,6 @@ const straights = () => {
         }
     }
     return count;
-    // console.log(count);
 }
 
 const trackDuplicates = () => {
@@ -269,10 +259,8 @@ const scoreSelect = () => {
     // add event listener for all elements in score class
     const scoreButtons = document.querySelectorAll('.score');
     // console.log(gameStart);
-    // if (gameStart === true) {
         for (let i=0; i < 13; i++) {
             scoreButtons[i].addEventListener('click', function () {
-                // scoreButtons[i].className = 'nes-btn is-disabled';
                 if (document.querySelector('#roll').textContent !== 'Roll' && document.querySelector('#roll').textContent !== 'Play Again') {
                 const finalScore = scoreButtons[i].textContent;
                 scoreObjs[i].value = finalScore;
@@ -289,7 +277,6 @@ const scoreSelect = () => {
             }
             })
         }
-    // }
 
     // allows for joker to be added in the future if player gets a Yahtzee
     // player will need to get a second Yahtzee to actually get the joker points
@@ -310,14 +297,12 @@ const finalScores = () => {
     if (document.querySelector('#setBonus').textContent !== '0') {
         upperSectionTotal += 35;
     }
-    // console.log(upperSectionTotal);
     document.querySelector('#upperTotal').textContent = upperSectionTotal;
 
     let lowerSectionTotal = 0;
     for (let i= 6; i<13; i++) {
         lowerSectionTotal += Number(scoreObjs[i].value);
     }
-    // console.log(lowerSectionTotal);
     document.querySelector('#lowerTotal').textContent = lowerSectionTotal;
 
     const grandTotal = upperSectionTotal + lowerSectionTotal;
@@ -331,7 +316,6 @@ const checkBonus = () => {
     for (let i=0; i<6; i++) {
         upperTotal += Number(scoreObjs[i].value);
     }
-    // console.log(upperTotal)
     if (upperTotal >= 63) {
         document.querySelector('#setBonus').textContent = 35;
     }
@@ -351,13 +335,14 @@ const roundReset = () => {
 }
 
 const endOfGame = (grandTotal) => {
-    // gameStart = false;
+    // Display final score on dice buttons
     if (Number(grandTotal) < 10) {
         grandTotal = `-${grandTotal}-`
     } else if (Number(grandTotal) < 100) {
         grandTotal = `0${grandTotal}`
     }
     const retryString = `-${grandTotal}-`;
+    
     const diceButtons = document.querySelectorAll('.dice');
     for (let i=0; i<5; i++) {
         diceButtons[i].textContent = retryString[i];
