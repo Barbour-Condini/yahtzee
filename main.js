@@ -341,18 +341,18 @@ const endOfGame = (grandTotal) => {
     } else if (Number(grandTotal) < 100) {
         grandTotal = `0${grandTotal}`
     }
-    const retryString = `-${grandTotal}-`;
+    const displayScore = `-${grandTotal}-`;
     
     const diceButtons = document.querySelectorAll('.dice');
     for (let i=0; i<5; i++) {
-        diceButtons[i].textContent = retryString[i];
+        diceButtons[i].textContent = displayScore[i];
         diceButtons[i].className = 'nes-btn dice';
-        const replayGame = document.querySelector('#roll');
-        replayGame.textContent = 'Play Again'
-        replayGame.addEventListener("click", function() {
-            gameReset();
-        })
     }
+    const replayGame = document.querySelector('#roll');
+    replayGame.textContent = 'Play Again'
+    replayGame.addEventListener("click", function() {
+        gameReset();
+    })
 }
 
 const gameReset = () => {
