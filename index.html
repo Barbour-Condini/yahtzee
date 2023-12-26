@@ -1,0 +1,163 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet" />
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <link rel="stylesheet" href="v5.css" />
+</head>
+
+<body>
+
+    <h1><img src="assets/img/die3.png" width="50px">YAHTZEE!<img src="assets/img/die3.png" width="50px"></h1>
+
+    <div>
+        <button class="nes-btn" id="mute">Mute</button>
+    </div>
+
+    <div class="nes-select">
+        <select required id="default_select">
+          <option value="" disabled selected>Theme</option>
+          <option value="0">Colour</option>
+          <option value="1">Light mono</option>
+          <option value="2">Dark mono</option>
+        </select>
+      </div>
+    
+      <section>
+        <button type="button" class="nes-btn" id="instruction-btn" onclick="document.getElementById('instructions').showModal();">
+          Instructions
+        </button>
+        <dialog class="nes-dialog is-dark" id="instructions">
+          <form method="dialog">
+            <p class="title">Instructions</p>
+            <iframe width="867" height="488" frameborder="0" src="https://www.youtube.com/embed/gz7WzSRRgpQ"></iframe>    
+            <menu class="dialog-menu">
+              <button class="nes-btn" id="instructionExit">Back to game</button>
+            </menu>
+          </form>
+        </dialog>
+      </section>
+
+    <div>
+        <button class="nes-btn dice" id="1">S</button>
+        <button class="nes-btn dice" id="2">T</button>
+        <button class="nes-btn dice" id="3">A</button>
+        <button class="nes-btn dice" id="4">R</button>
+        <button class="nes-btn dice" id="5">T</button>
+    </div>
+
+    <div>
+        <button class="nes-btn is-dice" id="roll">Roll</button>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="column">
+            <div class="nes-table-responsive" class="scoresheet">
+                <table class="nes-table is-bordered is-centered" id="uppserSection">
+                    <thead>
+                        <tr>
+                            <th colspan="3" class="thin-row">Upper Section</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th colspan="2">1's</th>
+                            <td id="setS1"><div><button class="nes-btn score" id="s1">0</button></div></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">2's</th>
+                            <td id="setS2"><div><button class="nes-btn score" id="s2">0</button></div></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">3's</th>
+                            <td id="setS3"><div><button class="nes-btn score" id="s3">0</button></div></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">4's</th>
+                            <td id="setS4"><div><button class="nes-btn score" id="s4">0</button></div></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">5's</th>
+                            <td id="setS5"><div><button class="nes-btn score" id="s5">0</button></div></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">6's</th>
+                            <td id="setS6"><div><button class="nes-btn score" id="s6">0</button></div></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Bonus</th>
+                            <td id="setBonus">0</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" class="thin-row">Total</th>
+                            <td class="thin-row" id="upperTotal"></td>
+                        </tr>
+                        <tr>
+                            <th colspan="3" class="thin-row">Grand Total</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="nes-table-responsive" class="scoresheet">
+                <table class="nes-table is-bordered is-centered" id="lowerSection">
+                    <thead>
+                        <tr>
+                            <th colspan="3" class="thin-row">Lower Section</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th colspan="2">3 of a kind</th>
+                            <td id="setThreeKind"><div><button class="nes-btn score" id="threeKind">0</button></div></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">4 of a kind</th>
+                            <td id="setFourKind"><div><button class="nes-btn score" id="fourKind">0</button></div></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Full house</th>
+                            <td id="setFullHouse"><div><button class="nes-btn score" id="fullHouse">0</button></div></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Small straight</th>
+                            <td id="setSmallStraight"><div><button class="nes-btn score" id="smallStraight">0</button></div></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Large straight</th>
+                            <td id="setLargeStraight"><div><button class="nes-btn score" id="largeStraight">0</button></div></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">YAHTZEE</th>
+                            <td id="setYahtzee"><div><button class="nes-btn score" id="yahtzee">0</button></div></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Chance</th>
+                            <td id="setClass"><div><button class="nes-btn score" id="chance">0</button></div></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" class="thin-row">Total</th>
+                            <td class="thin-row" id="lowerTotal"></td>
+                        </tr>
+                        <tr>
+                            <th colspan="3" class="thin-row" id="grandTotal"></th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+</body>
+<script src="extras.js"></script>
+<script src="v5.js"></script>
+<script src="audio.js"></script>
+
+</html>
