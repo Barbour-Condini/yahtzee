@@ -97,9 +97,9 @@ const holdRequest = () => {
     for (let i=1; i<6; i++) {
         const die = document.getElementById(`${i}`);
         const diceButtons = document.querySelectorAll('.dice')
-        die.addEventListener('click', function () {
+        die.addEventListener('click', function() {
             if (document.querySelector('#roll').textContent !== 'Roll' && document.querySelector('#roll').textContent !== 'Play Again') {
-            // when a die is clicked if the die's hold value is true, change to false
+            // when a die is clicked, if the die's hold value is true, change to false
             if (diceObjs[this.id - 1].hold) {
                 diceObjs[this.id - 1].hold = false;
             } else {
@@ -260,7 +260,7 @@ const scoreSelect = () => {
     const scoreButtons = document.querySelectorAll('.score');
     // console.log(gameStart);
         for (let i=0; i < 13; i++) {
-            scoreButtons[i].addEventListener('click', function () {
+            scoreButtons[i].addEventListener('click', () => {
                 if (document.querySelector('#roll').textContent !== 'Roll' && document.querySelector('#roll').textContent !== 'Play Again') {
                 const finalScore = scoreButtons[i].textContent;
                 scoreObjs[i].value = finalScore;
@@ -282,7 +282,7 @@ const scoreSelect = () => {
     // player will need to get a second Yahtzee to actually get the joker points
     // this function makes them eligible for those points
     const yahtzeeButton = document.querySelector(`#yahtzee`)
-    yahtzeeButton.addEventListener('click', function () {
+    yahtzeeButton.addEventListener('click', () => {
         if (scoreObjs[11].value !== '0') {
             scoreObjs[11].joker = true;
         }
@@ -350,7 +350,7 @@ const endOfGame = (grandTotal) => {
     }
     const replayGame = document.querySelector('#roll');
     replayGame.textContent = 'Play Again'
-    replayGame.addEventListener("click", function() {
+    replayGame.addEventListener("click", () => {
         gameReset();
     })
 }
