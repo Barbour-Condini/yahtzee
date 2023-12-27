@@ -3,6 +3,10 @@ body {
     background-color: peru;
 }
 
+h1 {
+    margin-top: 20px;
+}
+
 .dice {
     margin: 10px;
 }
@@ -11,7 +15,7 @@ body {
 .row {
     display: flex;
     margin: 0% 20%;
-  }
+}
   
 table {
     width: 98%;
@@ -21,16 +25,10 @@ th, td {
     text-align: center;
     height: 65px;
     background-color: bisque;
-    /* font-size: 10px; */
-
-  }
+}
 
 .thin-row {
     height: 40px;
-}
-
-  h1 {
-    margin-top: 20px;
 }
 
 .nes-select {
