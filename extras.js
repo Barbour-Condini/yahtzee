@@ -1,7 +1,7 @@
 // CHANGE COLOUR SCHEME
 
 const changeColorScheme = () => {
-    document.querySelector('#default_select').addEventListener("change", () => {
+    document.querySelector('#default_select').addEventListener("change", function () {
         if (this.value === "0") {
             document.body.style.backgroundColor = 'peru';
             document.body.style.color = 'black';
