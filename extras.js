@@ -1,7 +1,7 @@
 // CHANGE COLOUR SCHEME
 
 const changeColorScheme = () => {
-    document.querySelector('#default_select').addEventListener("change", function() {
+    document.querySelector('#default_select').addEventListener("change", () => {
         if (this.value === "0") {
             document.body.style.backgroundColor = 'peru';
             document.body.style.color = 'black';
@@ -37,7 +37,7 @@ const changeTableColors = (background, text) => {
 // INSTRUCTION VIDEO
 const stopVideo = () => {
     const video = document.querySelector('iframe');
-    document.querySelector('#instructionExit').addEventListener('click', function() {
+    document.querySelector('#instructionExit').addEventListener('click', () => {
         video.src="https://www.youtube.com/embed/gz7WzSRRgpQ" // hacky but it stops playback bc it has to reload the url. video.pause() isn't working, not sure it works with iframe?
     });
 }
