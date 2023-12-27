@@ -258,7 +258,6 @@ const scoreSelect = () => {
     
     // add event listener for all elements in score class
     const scoreButtons = document.querySelectorAll('.score');
-    // console.log(gameStart);
         for (let i=0; i < 13; i++) {
             scoreButtons[i].addEventListener('click', () => {
                 if (document.querySelector('#roll').textContent !== 'Roll' && document.querySelector('#roll').textContent !== 'Play Again') {
