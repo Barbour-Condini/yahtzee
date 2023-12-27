@@ -42,6 +42,21 @@
         </dialog>
       </section>
 
+      <section>
+        <button type="button" class="nes-btn" id="highscores-btn" onclick="document.getElementById('highscores').showModal();">
+          High Scores
+        </button>
+        <dialog class="nes-dialog is-dark" id="highscores">
+          <form method="dialog">
+            <p class="title">High Scores</p>
+            <ol id="highscoresEntries"></ol>
+            <menu class="dialog-menu">
+              <button class="nes-btn" id="highscoreExit">Back to game</button>
+            </menu>
+          </form>
+        </dialog>
+      </section>
+
     <div>
         <button class="nes-btn dice" id="1">S</button>
         <button class="nes-btn dice" id="2">T</button>

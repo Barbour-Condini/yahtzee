@@ -36,6 +36,13 @@ let scoreObjs = [
     {category: 'chance', value: 0, selected: false},
 ]
 
+// gameNumber
+let i = 1
+while (localStorage.getItem(`grandTotal${i}`) !== null) {
+    i ++;
+} 
+const gameNumber = i
+
 // LOCAL STORAGE:
 if (localStorage.getItem('backgroundColor') !== null) {
     const background = localStorage.getItem('backgroundColor');
@@ -47,7 +54,38 @@ if (localStorage.getItem('backgroundColor') !== null) {
     } else {
         changeTableColors('bisque', text);
     }
-}    
+}  
+
+// HIGH SCORE LIST
+const updateHighScores = () => {
+    // read scores in local storage and put into an array
+    let i = 1
+    const highScores = []
+    while (localStorage.getItem(`grandTotal${i}`) !== null) {
+        highScores.push(Number(localStorage.getItem(`grandTotal${i}`)))
+        i++;
+    }
+    highScores.sort(function(a, b) {return a-b});
+    highScores.reverse();
+
+    // add the top 10 items to the html list
+    // remove the old elements then add them back in
+    const container = document.querySelector(`#highscoresEntries`)
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+
+            for (let i = 0; i < 10; i++) {
+                if (i < highScores.length) {
+                    const node = document.createElement("li");
+                    const textnode = document.createTextNode(highScores[i]);
+                    node.appendChild(textnode);
+                    container.appendChild(node);
+                }
+            }
+        }
+
+updateHighScores();
 
 // DICE ROLLS
 
@@ -342,6 +380,12 @@ const endOfGame = (grandTotal) => {
     }
     const displayScore = `-${grandTotal}-`;
     
+    // save the score in local storage
+    localStorage.setItem(`grandTotal${gameNumber}`, grandTotal)
+
+    // update High Scores
+    updateHighScores();
+
     const diceButtons = document.querySelectorAll('.dice');
     for (let i=0; i<5; i++) {
         diceButtons[i].textContent = displayScore[i];
