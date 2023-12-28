@@ -31,21 +31,22 @@ th, td {
     height: 40px;
 }
 
-.nes-select {
+.nes-select, #mute, #instruction-btn, #highscores-btn {
     position: fixed;
-    top: 80px;
-    right: 20px;
     width: 220px;
 }
 
+.nes-select {
+    top: 80px;
+    right: 20px;
+}
+
 #mute {
-    position: fixed;
     top: 20px;
     right: 20px;
 }
 
 #instruction-btn{
-    position: fixed;
     top: 20px;
     left: 20px;
 }
