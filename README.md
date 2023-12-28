@@ -12,6 +12,10 @@ Welcome! This is my first JavaScript project. It simulates Yahtzee (my favourite
 
 ## Setup guide
 
+If you just want to play the game online, head to [barbour-condini.github.io/yahtzee/](https://barbour-condini.github.io/yahtzee/) 
+
+If you want to play offline or edit the game:
+
 1. Clone the repo; open in your preferred IDE
 ```
 $ git clone https://github.com/Barbour-Condini/yahtzee.git 
