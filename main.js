@@ -36,7 +36,7 @@ let scoreObjs = [
     {category: 'chance', value: 0, selected: false},
 ]
 
-// gameNumber
+// gameNumber - this tracks how many games have been played locally
 let i = 1
 while (localStorage.getItem(`grandTotal${i}`) !== null) {
     i ++;
