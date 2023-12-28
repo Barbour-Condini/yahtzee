@@ -26,7 +26,7 @@ $ git clone https://github.com/Barbour-Condini/yahtzee.git
 3. Enjoy, and if you spot some bugs, let me know!
 
 ## Roadmap
-- Find a hosting platform for a MySQL database to score highscores along with player names.
+- Improve styling
 
 ## Acknowledgements
 With thanks to:
