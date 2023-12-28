@@ -78,7 +78,7 @@ const updateHighScores = () => {
             for (let i = 0; i < 10; i++) {
                 if (i < highScores.length) {
                     const node = document.createElement("li");
-                    const textnode = document.createTextNode(highScores[i]);
+                    const textnode = document.createTextNode(`${i+1}. ${highScores[i]}`);
                     node.appendChild(textnode);
                     container.appendChild(node);
                 }
