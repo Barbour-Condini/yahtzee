@@ -43,7 +43,7 @@ while (localStorage.getItem(`grandTotal${i}`) !== null) {
 } 
 const gameNumber = i
 
-// LOCAL STORAGE:
+// COLOUR SCHEME LOCAL STORAGE:
 if (localStorage.getItem('backgroundColor') !== null) {
     const background = localStorage.getItem('backgroundColor');
     const text = localStorage.getItem('textColor');
@@ -56,7 +56,7 @@ if (localStorage.getItem('backgroundColor') !== null) {
     }
 }  
 
-// HIGH SCORE LIST
+// HIGH SCORE LIST LOCAL STORAGE:
 const updateHighScores = () => {
     // read scores in local storage and put into an array
     let i = 1
