@@ -95,7 +95,7 @@ const diceRoll = () => {
         if (!diceObjs[i].hold) {
             const result = Math.ceil(Math.random()*6);
             diceObjs[i].value = result;
-            document.getElementById(`${i+1}`).textContent = result;
+            document.getElementById(`${i+1}`).innerHTML = `<img src="assets/images/2d/${result}.png" width="30px"/>`;
         }
     }
 }

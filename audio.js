@@ -41,7 +41,7 @@ const checkYahtzeeAudio = () => {
     setTimeout(()=> {
         duplicateCounter = 0
         for (let j=0; j<4; j++) {
-            if(dice[j].textContent === dice[j+1].textContent) {
+            if(dice[j].innerHTML === dice[j+1].innerHTML) {
                 duplicateCounter++;
             } 
         }
