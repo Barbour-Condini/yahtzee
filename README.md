@@ -32,6 +32,7 @@ $ git clone https://github.com/Barbour-Condini/yahtzee.git
 With thanks to:
 - [NES.css](https://nostalgic-css.github.io/NES.css/) (CSS framework)
 - [ZapSplat.com](https://www.zapsplat.com) (sound effects)
+- [Pixilart.com](https://www.pixilart.com) (pixel art software)
 
 ## Licenses
 This project is licensed under the terms of the [MIT license](https://opensource.org/license/mit/)
