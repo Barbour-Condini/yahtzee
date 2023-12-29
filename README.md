@@ -16,10 +16,7 @@ If you just want to play the game online, head to [barbour-condini.github.io/yah
 
 If you want to play offline or edit the game:
 
-1. Clone the repo; open in your preferred IDE
-```
-$ git clone https://github.com/Barbour-Condini/yahtzee.git 
-```
+1. Fork the repo & open in your preferred IDE
 
 2. Launch the index.html file
 
