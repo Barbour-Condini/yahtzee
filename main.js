@@ -152,7 +152,7 @@ const holdRequest = () => {
 
 const changeColor = (diceButtons, index) => {
     if (diceObjs[index].hold) {
-        diceButtons[index].className = 'nes-btn is-warning dice';
+        diceButtons[index].className = 'nes-btn is-primary dice';
     } else {
         diceButtons[index].className = 'nes-btn dice';
     }
