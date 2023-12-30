@@ -90,7 +90,7 @@ updateHighScores();
 // DICE ROLLS
 
 const diceRoll = () => {
-    // rolls all non-held dice once (or should do!)
+    // rolls all non-held dice once
     for (let i = 0; i<5; i++) {
         if (!diceObjs[i].hold) {
             const result = Math.ceil(Math.random()*6);
