@@ -43,11 +43,10 @@ const checkYahtzeeAudio = () => {
         for (let j=0; j<4; j++) {
             if((diceObjs[j].value === diceObjs[j+1].value) 
             && document.querySelector('#roll').textContent !== 'Roll' 
-        && document.querySelector('#roll').textContent !== 'Play Again') {
+            && document.querySelector('#roll').textContent !== 'Play Again') {
                 duplicateCounter++;
             } 
         }
-        console.log(duplicateCounter)
         if (duplicateCounter === 4 && !mute) {
             yahtzeeAchieved.play();
         } 
@@ -89,7 +88,7 @@ roll.addEventListener('click', function () {
 
 
 // SCORE SELECT
-const scoreButtons = document.querySelectorAll('.score');
+// const scoreButtons = document.querySelectorAll('.score');
 for (let i=0; i<13; i++) {
     scoreButtons[i].addEventListener('click', () => {
         if (scoreButtons[i].textContent !== '0' && !mute && roundCount !== 14) {
