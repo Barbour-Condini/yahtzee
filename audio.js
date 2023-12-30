@@ -41,10 +41,11 @@ const checkYahtzeeAudio = () => {
     setTimeout(()=> {
         duplicateCounter = 0
         for (let j=0; j<4; j++) {
-            if(dice[j].innerHTML === dice[j+1].innerHTML) {
+            if(diceObjs[j].value === diceObjs[j+1].value) {
                 duplicateCounter++;
             } 
         }
+        console.log(duplicateCounter)
         if (duplicateCounter === 4 && !mute) {
             yahtzeeAchieved.play();
         } 
