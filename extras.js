@@ -66,3 +66,22 @@ for (let i=0; i<11; i++) {
         dice.style.zIndex = '-1';
     }, (randomNumber(0, 2000)));
 }
+
+// ANIMATE DICE
+const diceRollAnimation = (i) => {
+    const result = Math.ceil(Math.random()*6)
+    document.getElementById(`${Number(i)+1}`).innerHTML = `<img src="assets/images/2d/${result}.png" alt="${result}" width="40px"/>`;
+}
+
+roll.addEventListener('click', function () {
+for (let i=0; i<5; i++) {
+    if (!diceObjs[i].hold && roll.textContent !== 'Roll 3') {
+        const animateDiceRoll = setInterval(diceRollAnimation, 50, i);
+        setTimeout(() => {
+            clearInterval(animateDiceRoll);
+            document.getElementById(`${Number(i)+1}`).innerHTML = `<img src="assets/images/2d/${diceObjs[i].value}.png" alt="${diceObjs[i].value}" width="40px"/>`;
+    }, randomNumber(100, 1000))
+}
+}
+})
+
