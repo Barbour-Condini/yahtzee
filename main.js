@@ -90,34 +90,12 @@ updateHighScores();
 // DICE ROLLS
 
 const diceRoll = () => {
-    // rolls all non-held dice once 
-
-    const showDice = (i) => {
-        const result = Math.ceil(Math.random()*6)
-        document.getElementById(`${i+1}`).innerHTML = `<img src="assets/images/2d/${result}.png" alt="${result}" width="40px"/>`;
-        return result;
-    }
-
-    // select a random number for the dice roll duration 
-    const randomNumber = (min, max) => {
-        return Math.floor(Math.random() * (max - min) + min);
-    }
-
-    // roll dice and store values
+    // rolls all non-held dice once (or should do!)
     for (let i = 0; i<5; i++) {
         if (!diceObjs[i].hold) {
-            diceObjs[i].value = showDice(i);
-            const randomiseDiceRoll = setInterval(showDice, 50, i);
-            const promise = new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    resolve(clearInterval(randomiseDiceRoll))
-                }, randomNumber(100, 1000));
-            })
-            const diceValueSet = async() => {
-                let result = await promise;
-                document.getElementById(`${i+1}`).innerHTML = `<img src="assets/images/2d/${diceObjs[i].value}.png" alt="${diceObjs[i].value}" width="40px"/>`;
-            }
-            diceValueSet();
+            const result = Math.ceil(Math.random()*6);
+            diceObjs[i].value = result;
+            document.getElementById(`${i+1}`).innerHTML = `<img src="assets/images/2d/${result}.png" alt="${result}" width="40px"/>`;
         }
     }
 }
@@ -137,7 +115,6 @@ const rollTracker = () => {
                 rollCount.textContent = `Roll ${rollCounter + 1}`;
                 rollCount.className = 'nes-btn';
                 diceRoll();
-                // wait for diceRoll to complete before running:
                 upperScores();
                 lowerScores();
             } else if (rollCounter === 2) {
@@ -146,7 +123,6 @@ const rollTracker = () => {
                 upperScores();
                 lowerScores();
                 rollCount.className = 'nes-btn is-disabled';
-                // this last else if statement is just to enable the dice roll audio to play
             } else if (rollCounter === 3) {
                 ;
             }
