@@ -1,5 +1,4 @@
 // CHANGE COLOUR SCHEME
-
 const changeColorScheme = () => {
     document.querySelector('#default_select').addEventListener("change", function () {
         if (this.value === "0") {
@@ -63,9 +62,7 @@ for (let i=0; i<11; i++) {
         dice.style.top = `${randomNumber(30, 98)}%`;
         dice.style.left = `${randomNumber(0, 98)}%`;
         dice.style.transform = `rotate(${randomNumber(0, 360)}deg)`;
-        dice.style.width = `${randomNumber(50, 120)}px`;
+        dice.style.width = `${randomNumber(50, 200)}px`;
         dice.style.zIndex = '-1';
     }, (randomNumber(0, 2000)));
-
-
 }
