@@ -42,3 +42,27 @@ const stopVideo = () => {
     });
 }
 stopVideo()
+
+// 3D DICE BACKGROUND (RANDOMISED)
+const randomNumber = (min, max) => {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+for (let i=0; i<11; i++) {
+    const dice = document.createElement('img');
+    dice.src = `assets/images/3d/${i}.png`;
+    dice.id = `img${i}`;
+    dice.class = '3dImg'
+    document.body.appendChild(dice);
+
+    dice.style.position = 'fixed';
+    dice.style.top = `${randomNumber(30, 100)}%`;
+    dice.style.left = `${randomNumber(0, 100)}%`;
+    dice.style.transform = `rotate(${randomNumber(0, 360)}deg)`;
+    // const time = randomNumber(8, 15);
+    dice.style.width = `${randomNumber(50, 120)}px`;
+    // dice.style.opacity = `${Math.random()}`;
+    dice.style.zIndex = '-1';
+
+
+}
