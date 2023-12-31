@@ -1,6 +1,7 @@
 body {
     text-align: center;
-    background-color: peru;
+    background-color: black;
+    color: white;
 }
 
 h1 {
@@ -27,7 +28,7 @@ table {
 th, td {
     text-align: center;
     height: 65px;
-    background-color: bisque;
+    background-color: black;
 }
 
 .thin-row {
