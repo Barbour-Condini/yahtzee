@@ -88,7 +88,7 @@ roll.addEventListener('click', function () {
 
 
 // SCORE SELECT
-// const scoreButtons = document.querySelectorAll('.score');
+const scoreButtons = document.querySelectorAll('.score');
 for (let i=0; i<13; i++) {
     scoreButtons[i].addEventListener('click', () => {
         if (scoreButtons[i].textContent !== '0' && !mute && roundCount !== 14) {
