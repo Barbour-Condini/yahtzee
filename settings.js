@@ -47,6 +47,8 @@ const randomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
+
+const place3dDice = () => {
 for (let j=0; j<2; j++) {
 for (let i = 0; i < 11; i++) {
     setTimeout(() => {
@@ -68,4 +70,6 @@ for (let i = 0; i < 11; i++) {
     }, (randomNumber(0, 2000)));
 }
 }
+}
 
+place3dDice();
