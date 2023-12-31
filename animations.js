@@ -1,4 +1,5 @@
 // ANIMATE DICE ROLL
+const animateDiceRoll = () => {
 const diceRollAnimation = (i) => {
     const result = Math.ceil(Math.random() * 6)
     document.getElementById(`${Number(i) + 1}`).innerHTML = `<img src="assets/images/2d/${result}.png" alt="${result}" width="40px"/>`;
@@ -16,10 +17,7 @@ roll.addEventListener('click', () => {
     }
 })
 
-
-// const scoreButtons = document.querySelectorAll('.score');
-// (scoreButtons commented out as already initialised in audio.js)
-
+const scoreButtons = document.querySelectorAll('.score');
 for (let i=0; i<13; i++) {
     scoreButtons[i].addEventListener('click', () => {
         if(roundCount !==13
@@ -35,6 +33,8 @@ for (let i=0; i<13; i++) {
         }
     })
 }
+}
+animateDiceRoll();
 
 // 3D DICE BACKGROUND (RANDOMISED)
 const randomNumber = (min, max) => {
