@@ -47,6 +47,7 @@ const randomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
+for (let j=0; j<2; j++) {
 for (let i = 0; i < 11; i++) {
     setTimeout(() => {
         const dice = document.createElement('img');
@@ -65,5 +66,6 @@ for (let i = 0; i < 11; i++) {
         dice.style.width = `${randomNumber(50, 300)}px`;
         dice.style.zIndex = '-1';
     }, (randomNumber(0, 2000)));
+}
 }
 
