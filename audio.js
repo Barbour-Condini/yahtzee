@@ -77,13 +77,13 @@ const checkGameEndAudio = () => {
 // ROLL
 const roll = document.querySelector('#roll');
 roll.addEventListener('click', function () {
-    // if (roll.textContent !== 'Play Again') { // not needed as the sound won't be triggered over a page reload anyway
+    if (roll.textContent !== 'Play Again') { // sound shouldn't be triggered over a page reload anyway, but sometimes the browser's slow
         checkYahtzeeAudio();
         // checkBonusAudio();
         if (!mute && rollCounter <= 3) {
             diceRollAudio.play();
         }
-    // }
+    }
 })
 
 
