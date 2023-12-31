@@ -18,7 +18,7 @@ roll.addEventListener('click', () => {
 
 
 // const scoreButtons = document.querySelectorAll('.score');
-// (scoreButtons commented out as already initiated in audio.js)
+// (scoreButtons commented out as already initialised in audio.js)
 
 for (let i=0; i<13; i++) {
     scoreButtons[i].addEventListener('click', () => {
