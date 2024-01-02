@@ -7,7 +7,7 @@ const animateDiceRoll = () => {
 
     roll.addEventListener('click', () => {
         for (let i = 0; i < 5; i++) {
-            if (!diceObjs[i].hold && roll.textContent !== 'Roll 3') {
+            if (!diceObjs[i].hold && rollCounter <= 3) {
                 const animateDiceRoll = setInterval(diceRollAnimation, randomNumber(50, 200), i);
                 setTimeout(() => {
                     clearInterval(animateDiceRoll);
