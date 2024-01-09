@@ -10,7 +10,12 @@
 ## About
 Welcome! This is my first JavaScript project. It simulates Yahtzee (my favourite dice game).
 
-<img src="assets/images/screenshots/start_b.png" style="text-align: center;" width=40% alt="Start screen">
+<img 
+    style="display: block; 
+           margin-left: auto;
+           margin-right: auto;
+           width: 40%;"
+src="assets/images/screenshots/start_b.png" alt="Start screen">
 
 <img src="assets/images/screenshots/gameplay_s.png" style="text-align: center;" width=40% alt="Gameplay screenshot">
 
