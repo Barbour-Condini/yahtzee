@@ -26,7 +26,7 @@ $ git clone https://github.com/Barbour-Condini/yahtzee.git
 3. Enjoy, and if you spot some bugs, let me know!
 
 ## Roadmap
-- Improve styling
+- Optimise for mobile display
 
 ## Acknowledgements
 With thanks to:
