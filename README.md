@@ -10,6 +10,10 @@
 ## About
 Welcome! This is my first JavaScript project. It simulates Yahtzee (my favourite dice game).
 
+<img src="images/start_b.png" class='markdown-img' width=40% alt="Start screen">
+
+<img src="images/gameplay_s.png" class='markdown-img' width=40% alt="Gameplay screenshot">
+
 ## Setup guide
 
 If you just want to play the game online, head to [barbour-condini.github.io/yahtzee/](https://barbour-condini.github.io/yahtzee/) 
