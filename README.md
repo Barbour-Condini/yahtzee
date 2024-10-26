@@ -8,28 +8,16 @@
 - [Licenses](#licenses)
 
 ## About
-Welcome! This is my first JavaScript project. It simulates Yahtzee (my favourite dice game).
+An in-browser Yahtzee simulator. Not optimised for mobile.
 
 
 <img src="assets/images/screenshots/gameplay_s.png" style="text-align: center;" width=100% alt="Gameplay screenshot">
 
 ## Setup guide
 
+None required; clone the repo to run locally and/or edit. 
+
 If you just want to play the game online, head to [barbour-condini.github.io/yahtzee/](https://barbour-condini.github.io/yahtzee/) 
-
-If you want to download a copy of the game files to edit or play offline:
-
-1. Fork and/or clone the repo; open in your preferred IDE
-```
-$ git clone https://github.com/Barbour-Condini/yahtzee.git 
-```
-
-2. Launch the index.html file
-
-3. Enjoy, and if you spot some bugs, let me know!
-
-## Roadmap
-- Optimise for mobile display
 
 ## Acknowledgements
 With thanks to:
